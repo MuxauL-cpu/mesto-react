@@ -4,19 +4,19 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-import PopupWithImage from './PopupWithImage';
+import ImagePopup from './ImagePopup';
 
 function App() {
   const [isProfileEditOpen, setProfileEditOpen] = React.useState(false);
   const [isAddCardFormOpen, setAddCardFormOpen] = React.useState(false);
   const [isUserAvatarFormOpen, setUserAvatarFormOpen] = React.useState(false);
 
-  const [currentCard, setCurrentCard] = React.useState({});
+  const [selectedCard, setSelectedCard] = React.useState({});
   const [isCardOpen, setCardOpen] = React.useState(false);
 
   function handleCardClick(cardsData) {
     setCardOpen(!isCardOpen);
-    setCurrentCard(cardsData);
+    setSelectedCard(cardsData);
   }
 
   function handleUserPopupOpen() {
@@ -98,8 +98,8 @@ function App() {
           </>
         }
       />
-      <PopupWithImage 
-        card={currentCard}
+      <ImagePopup 
+        card={selectedCard}
         isOpen={isCardOpen}
         isClosed={closeAllPopups}
       />
