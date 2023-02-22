@@ -49,6 +49,7 @@ function Main(props) {
                 key={id}
                 card={card}
                 openCard={props.openCard}
+                delete={props.openDelete}
               />
             )}
           </ul>

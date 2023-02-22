@@ -10,6 +10,7 @@ function App() {
   const [isProfileEditOpen, setProfileEditOpen] = React.useState(false);
   const [isAddCardFormOpen, setAddCardFormOpen] = React.useState(false);
   const [isUserAvatarFormOpen, setUserAvatarFormOpen] = React.useState(false);
+  const [isConfirmationOpen, setConfirmationOpen] = React.useState(false);
 
   const [selectedCard, setSelectedCard] = React.useState({});
   const [isCardOpen, setCardOpen] = React.useState(false);
@@ -17,6 +18,10 @@ function App() {
   function handleCardClick(cardsData) {
     setCardOpen(!isCardOpen);
     setSelectedCard(cardsData);
+  }
+
+  function handleConfirmationOpen() {
+    setConfirmationOpen(!isConfirmationOpen);
   }
 
   function handleUserPopupOpen() {
@@ -36,6 +41,7 @@ function App() {
     setProfileEditOpen(false);
     setAddCardFormOpen(false);
     setUserAvatarFormOpen(false);
+    setConfirmationOpen(false);
   }
   return (
     <>
@@ -45,6 +51,7 @@ function App() {
         openAddCard={handleAddCardFormOpen}
         openUserPicture={handleUserAvatarFormOpen}
         openCard={handleCardClick}
+        openDelete={handleConfirmationOpen}
       />
       <Footer />
       <PopupWithForm 
@@ -107,6 +114,8 @@ function App() {
         name="card-delete"
         header="Вы уверены?"
         buttonText="Да"
+        isOpen={isConfirmationOpen}
+        isClosed={closeAllPopups}
         children={<></>}
       />
     </>
