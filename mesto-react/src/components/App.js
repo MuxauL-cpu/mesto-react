@@ -11,34 +11,32 @@ function App() {
   const [isAddCardFormOpen, setAddCardFormOpen] = React.useState(false);
   const [isUserAvatarFormOpen, setUserAvatarFormOpen] = React.useState(false);
 
-  const [currentCard, setCurrentCard] = React.useState({ isOpen: false });
+  const [currentCard, setCurrentCard] = React.useState({});
+  const [isCardOpen, setCardOpen] = React.useState(false);
 
-  function handleCardClick(card) {
-    setCurrentCard({ isOpen: true, ...card});
+  function handleCardClick(cardsData) {
+    setCardOpen(!isCardOpen);
+    setCurrentCard(cardsData);
   }
-
 
   function handleUserPopupOpen() {
     setProfileEditOpen(!isProfileEditOpen);
-  }
-  function handleUserPopupClose() {
-    setProfileEditOpen(false);
   }
 
   function handleAddCardFormOpen() {
     setAddCardFormOpen(!isAddCardFormOpen);
   }
-  function handleAddCardFormClose() {
-    setAddCardFormOpen(false);
-  }
 
   function handleUserAvatarFormOpen() {
     setUserAvatarFormOpen(!isUserAvatarFormOpen);
   }
-  function handleUserAvatarFormClose() {
+
+  function closeAllPopups() {
+    setCardOpen(false);
+    setProfileEditOpen(false);
+    setAddCardFormOpen(false);
     setUserAvatarFormOpen(false);
   }
-
   return (
     <>
       <Header />
@@ -46,13 +44,15 @@ function App() {
         openEdit={handleUserPopupOpen} 
         openAddCard={handleAddCardFormOpen}
         openUserPicture={handleUserAvatarFormOpen}
+        openCard={handleCardClick}
       />
       <Footer />
       <PopupWithForm 
         name="avatar"
         header="Обновить аватар"
+        buttonText="Сохранить"
         isOpen={isUserAvatarFormOpen}
-        isClosed={handleUserAvatarFormClose}
+        isClosed={closeAllPopups}
         children={
           <>
             <label htmlFor="avatar-link" className="popup__label">
@@ -60,13 +60,14 @@ function App() {
               <p className="avatar-link-error popup__input-error"></p>
             </label>
           </>
-        }
+        } 
       />
       <PopupWithForm 
         name="user"
         header="Редактировать профиль"
+        buttonText="Сохранить"
         isOpen={isProfileEditOpen}
-        isClosed={handleUserPopupClose}
+        isClosed={closeAllPopups}
         children={
           <>
             <label htmlFor="user-name" className="popup__label"></label>
@@ -82,8 +83,9 @@ function App() {
       <PopupWithForm 
         name="card-editor"
         header="Новое место"
+        buttonText="Создать"
         isOpen={isAddCardFormOpen}
-        isClosed={handleAddCardFormClose}
+        isClosed={closeAllPopups}
         children={
           <>
             <label htmlFor="user-name" className="popup__label"></label>
@@ -98,16 +100,15 @@ function App() {
       />
       <PopupWithImage 
         card={currentCard}
+        isOpen={isCardOpen}
+        isClosed={closeAllPopups}
       />
-      <section className="popup popup_type_card-delete">
-        <div className="popup__container">
-          <h2 className="popup__header">Вы уверены?</h2>
-          <form className="popup__form popup__form_type_delete-cards" name="popupCardsDeleteForm" noValidate>
-            <button type="submit" className="popup__button-submit popup__button-submit_type_delete-cards">Да</button>
-          </form>
-          <button type="button" aria-label="Закрыть" className="popup__button-close"></button>
-        </div>
-      </section>
+      <PopupWithForm 
+        name="card-delete"
+        header="Вы уверены?"
+        buttonText="Да"
+        children={<></>}
+      />
     </>
   );
 }

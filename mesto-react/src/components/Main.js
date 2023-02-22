@@ -1,8 +1,10 @@
 import React from "react";
-import api from "../utils/Api";
+
 import Card from "./Card";
+import api from "../utils/Api";
 
 function Main(props) {
+
   const [userAvatar, patchProfilePicture] = React.useState('');
   const [userName, patchUserName] = React.useState('');
   const [userAbout, patchUserAbout] = React.useState('');
@@ -45,6 +47,7 @@ function Main(props) {
             {cards.map(card =>
               <Card 
                 card={card}
+                openCard={props.openCard}
               />
             )}
           </ul>

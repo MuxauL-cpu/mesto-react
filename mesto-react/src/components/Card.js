@@ -2,8 +2,7 @@ import React from "react";
 
 function Card(props) {
   function handleCardClick() {
-    console.log(props.card.link);
-    console.log(props.card.name);
+    props.openCard(props.card);
   }
   return(
     <li className="elements__card">
