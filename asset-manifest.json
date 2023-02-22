@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/MuxauL-cpu/mesto-react/static/css/main.c289c9a0.css",
-    "main.js": "/MuxauL-cpu/mesto-react/static/js/main.a6fd425e.js",
-    "static/js/787.5530211c.chunk.js": "/MuxauL-cpu/mesto-react/static/js/787.5530211c.chunk.js",
-    "static/media/Inter-Black.woff": "/MuxauL-cpu/mesto-react/static/media/Inter-Black.fd37f7e052bea1018058.woff",
-    "static/media/Inter-Medium.woff": "/MuxauL-cpu/mesto-react/static/media/Inter-Medium.7ddb89dcdb33dd761944.woff",
-    "static/media/Inter-Regular.woff": "/MuxauL-cpu/mesto-react/static/media/Inter-Regular.34ed58565339f4f3be40.woff",
-    "static/media/Inter-Black.woff2": "/MuxauL-cpu/mesto-react/static/media/Inter-Black.141c7af6ed109b318513.woff2",
-    "static/media/Inter-Medium.woff2": "/MuxauL-cpu/mesto-react/static/media/Inter-Medium.6db7e439cc4b0e5c0cd2.woff2",
-    "static/media/Inter-Regular.woff2": "/MuxauL-cpu/mesto-react/static/media/Inter-Regular.4c96ed73beaf6d1e6cc7.woff2",
-    "static/media/mesto_logo.svg": "/MuxauL-cpu/mesto-react/static/media/mesto_logo.22ee081be7ac8c7afbfdcea78681c621.svg",
-    "static/media/button__like.svg": "/MuxauL-cpu/mesto-react/static/media/button__like.40ae1e996fc63a6376ca.svg",
-    "index.html": "/MuxauL-cpu/mesto-react/index.html",
-    "static/media/delete_icon.svg": "/MuxauL-cpu/mesto-react/static/media/delete_icon.da5073cd5bd70545237b.svg",
-    "static/media/button_like_enabled.svg": "/MuxauL-cpu/mesto-react/static/media/button_like_enabled.cfa93256bac861d9efb8.svg",
-    "static/media/button_edit.svg": "/MuxauL-cpu/mesto-react/static/media/button_edit.d34e56a394bd491f516f.svg",
-    "static/media/close_icon.svg": "/MuxauL-cpu/mesto-react/static/media/close_icon.83109067313b063a00f4.svg",
-    "static/media/button_add.svg": "/MuxauL-cpu/mesto-react/static/media/button_add.29ae77b278c0e0e61c8b.svg",
-    "main.c289c9a0.css.map": "/MuxauL-cpu/mesto-react/static/css/main.c289c9a0.css.map",
-    "main.a6fd425e.js.map": "/MuxauL-cpu/mesto-react/static/js/main.a6fd425e.js.map",
-    "787.5530211c.chunk.js.map": "/MuxauL-cpu/mesto-react/static/js/787.5530211c.chunk.js.map"
+    "main.css": "/MuxauL-cpu/static/css/main.cef26148.css",
+    "main.js": "/MuxauL-cpu/static/js/main.9b8d21ba.js",
+    "static/js/787.5530211c.chunk.js": "/MuxauL-cpu/static/js/787.5530211c.chunk.js",
+    "static/media/Inter-Black.woff": "/MuxauL-cpu/static/media/Inter-Black.fd37f7e052bea1018058.woff",
+    "static/media/Inter-Medium.woff": "/MuxauL-cpu/static/media/Inter-Medium.7ddb89dcdb33dd761944.woff",
+    "static/media/Inter-Regular.woff": "/MuxauL-cpu/static/media/Inter-Regular.34ed58565339f4f3be40.woff",
+    "static/media/Inter-Black.woff2": "/MuxauL-cpu/static/media/Inter-Black.141c7af6ed109b318513.woff2",
+    "static/media/Inter-Medium.woff2": "/MuxauL-cpu/static/media/Inter-Medium.6db7e439cc4b0e5c0cd2.woff2",
+    "static/media/Inter-Regular.woff2": "/MuxauL-cpu/static/media/Inter-Regular.4c96ed73beaf6d1e6cc7.woff2",
+    "static/media/mesto_logo.svg": "/MuxauL-cpu/static/media/mesto_logo.22ee081be7ac8c7afbfdcea78681c621.svg",
+    "static/media/button__like.svg": "/MuxauL-cpu/static/media/button__like.40ae1e996fc63a6376ca.svg",
+    "index.html": "/MuxauL-cpu/index.html",
+    "static/media/delete_icon.svg": "/MuxauL-cpu/static/media/delete_icon.da5073cd5bd70545237b.svg",
+    "static/media/button_like_enabled.svg": "/MuxauL-cpu/static/media/button_like_enabled.cfa93256bac861d9efb8.svg",
+    "static/media/button_edit.svg": "/MuxauL-cpu/static/media/button_edit.d34e56a394bd491f516f.svg",
+    "static/media/close_icon.svg": "/MuxauL-cpu/static/media/close_icon.83109067313b063a00f4.svg",
+    "static/media/button_add.svg": "/MuxauL-cpu/static/media/button_add.29ae77b278c0e0e61c8b.svg",
+    "main.cef26148.css.map": "/MuxauL-cpu/static/css/main.cef26148.css.map",
+    "main.9b8d21ba.js.map": "/MuxauL-cpu/static/js/main.9b8d21ba.js.map",
+    "787.5530211c.chunk.js.map": "/MuxauL-cpu/static/js/787.5530211c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c289c9a0.css",
-    "static/js/main.a6fd425e.js"
+    "static/css/main.cef26148.css",
+    "static/js/main.9b8d21ba.js"
   ]
 }
