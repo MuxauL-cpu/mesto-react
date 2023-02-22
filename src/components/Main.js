@@ -44,8 +44,9 @@ function Main(props) {
         </section>
         <section className="photo-grid">
           <ul className="photo-grid__list">
-            {cards.map(card =>
+            {cards.map((card, id) =>
               <Card 
+                key={id}
                 card={card}
                 openCard={props.openCard}
               />
