@@ -46,10 +46,10 @@ function Main(props) {
           <ul className="photo-grid__list">
             {cards.map((card, id) =>
               <Card 
-                key={id}
+                key={card._id}
                 card={card}
                 openCard={props.openCard}
-                delete={props.openDelete}
+                deleteClick={props.openDelete}
               />
             )}
           </ul>

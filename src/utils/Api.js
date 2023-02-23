@@ -8,11 +8,7 @@ class Api {
     return fetch(`${this._url}/cards`, {
       headers: this._headers
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   createCard(data) {
@@ -21,11 +17,7 @@ class Api {
       method: "POST",
       body: JSON.stringify(data)
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   deleteCard(id) {
@@ -33,11 +25,7 @@ class Api {
       headers: this._headers,
       method: "DELETE",
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   deleteLike(id) {
@@ -45,11 +33,7 @@ class Api {
       headers: this._headers,
       method: "DELETE",
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   createLike(id) {
@@ -57,33 +41,21 @@ class Api {
       headers: this._headers,
       method: "PUT",
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   getUserInfo() {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers,
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   setUserInfo() {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers,
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   patchUserInfo(data) {
@@ -92,11 +64,7 @@ class Api {
       method: "PATCH",
       body: JSON.stringify(data)
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
   }
 
   patchProfilePicture(data) {
@@ -105,11 +73,14 @@ class Api {
       method: "PATCH",
       body: JSON.stringify(data)
     })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-    })
+    .then(this._getResponse)
+  }
+
+  _getResponse(res) {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
+    return res.json();
   }
 }
 
