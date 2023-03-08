@@ -1,55 +1,35 @@
 import React from "react";
 
 import Card from "./Card";
-import api from "../utils/Api";
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main(props) {
-
-  const [userAvatar, patchProfilePicture] = React.useState('');
-  const [userName, patchUserName] = React.useState('');
-  const [userAbout, patchUserAbout] = React.useState('');
-
-  const [cards, setCard] = React.useState([]);
-
-  React.useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getInitialCards()])
-      .then((data) => {
-        const [userData, cardsData] = data;
-
-        patchProfilePicture(userData.avatar);
-        patchUserName(userData.name);
-        patchUserAbout(userData.about);
-
-        setCard(cardsData)
-      })
-      .catch((error) => {
-        console.log(`Ошибка: ${error}`);
-      })
-  }, []);
+  const currentUser = React.useContext(CurrentUserContext);
 
   return(
     <main className="content">
       <section className="profile">
         <div className="profile__avatar-container" onClick={props.openUserPicture}>
-          <img src={userAvatar} className="profile__avatar" alt="Аватар профиля" />
+          <img src={currentUser.avatar} className="profile__avatar" alt="Аватар профиля" />
         </div>
           <div className="profile__info">
             <div className="profile__name-container">
-              <h1 className="profile__name">{userName}</h1>
+              <h1 className="profile__name">{currentUser.name}</h1>
               <button type="button" aria-label="Редактирование профиля" className="profile__button" onClick={props.openEdit}></button>
             </div>
-            <p className="profile__job">{userAbout}</p>
+            <p className="profile__job">{currentUser.about}</p>
           </div>
           <button type="button" aria-label="Добавить новую картинку" className="profile__button-add" onClick={props.openAddCard}></button>
         </section>
         <section className="photo-grid">
           <ul className="photo-grid__list">
-            {cards.map((card, id) =>
+            {props.cards.map((card) =>
               <Card 
                 key={card._id}
                 card={card}
                 openCard={props.openCard}
                 deleteClick={props.openDelete}
+                onCardLike={props.onCardLike}
               />
             )}
           </ul>

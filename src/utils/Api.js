@@ -11,11 +11,11 @@ class Api {
     .then(this._getResponse)
   }
 
-  createCard(data) {
+  createCard({ name, link }) {
     return fetch(`${this._url}/cards`, {
       headers: this._headers,
       method: "POST",
-      body: JSON.stringify(data)
+      body: JSON.stringify({ name, link })
     })
     .then(this._getResponse)
   }
@@ -36,10 +36,10 @@ class Api {
     .then(this._getResponse)
   }
 
-  createLike(id) {
+  createLike(id, isLiked) {
     return fetch(`${this._url}/cards/likes/${id}`, {
       headers: this._headers,
-      method: "PUT",
+      method: isLiked ? "PUT" : "DELETE",
     })
     .then(this._getResponse)
   }
@@ -58,20 +58,20 @@ class Api {
     .then(this._getResponse)
   }
 
-  patchUserInfo(data) {
+  patchUserInfo({ name, about }) {
     return fetch(`${this._url}/users/me`, {
       headers: this._headers,
       method: "PATCH",
-      body: JSON.stringify(data)
+      body: JSON.stringify({ name, about })
     })
     .then(this._getResponse)
   }
 
-  patchProfilePicture(data) {
+  patchProfilePicture({ avatar }) {
     return fetch(`${this._url}/users/me/avatar`, {
       headers: this._headers,
       method: "PATCH",
-      body: JSON.stringify(data)
+      body: JSON.stringify({ avatar })
     })
     .then(this._getResponse)
   }
