@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MuxauL-cpu.github.io/mesto-react/static/css/main.290449ce.css",
-    "main.js": "/MuxauL-cpu.github.io/mesto-react/static/js/main.8d854c8d.js",
+    "main.css": "/MuxauL-cpu.github.io/mesto-react/static/css/main.abc71a02.css",
+    "main.js": "/MuxauL-cpu.github.io/mesto-react/static/js/main.360a18a6.js",
     "static/js/787.5530211c.chunk.js": "/MuxauL-cpu.github.io/mesto-react/static/js/787.5530211c.chunk.js",
     "static/media/Inter-Black.woff": "/MuxauL-cpu.github.io/mesto-react/static/media/Inter-Black.fd37f7e052bea1018058.woff",
     "static/media/Inter-Medium.woff": "/MuxauL-cpu.github.io/mesto-react/static/media/Inter-Medium.7ddb89dcdb33dd761944.woff",
@@ -17,12 +17,12 @@
     "static/media/button_edit.svg": "/MuxauL-cpu.github.io/mesto-react/static/media/button_edit.d34e56a394bd491f516f.svg",
     "static/media/close_icon.svg": "/MuxauL-cpu.github.io/mesto-react/static/media/close_icon.83109067313b063a00f4.svg",
     "static/media/button_add.svg": "/MuxauL-cpu.github.io/mesto-react/static/media/button_add.29ae77b278c0e0e61c8b.svg",
-    "main.290449ce.css.map": "/MuxauL-cpu.github.io/mesto-react/static/css/main.290449ce.css.map",
-    "main.8d854c8d.js.map": "/MuxauL-cpu.github.io/mesto-react/static/js/main.8d854c8d.js.map",
+    "main.abc71a02.css.map": "/MuxauL-cpu.github.io/mesto-react/static/css/main.abc71a02.css.map",
+    "main.360a18a6.js.map": "/MuxauL-cpu.github.io/mesto-react/static/js/main.360a18a6.js.map",
     "787.5530211c.chunk.js.map": "/MuxauL-cpu.github.io/mesto-react/static/js/787.5530211c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.290449ce.css",
-    "static/js/main.8d854c8d.js"
+    "static/css/main.abc71a02.css",
+    "static/js/main.360a18a6.js"
   ]
 }
