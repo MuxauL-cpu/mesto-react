@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Provider } from 'react';
 
 import Header from './Header';
@@ -15,19 +15,19 @@ import api from '../utils/Api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
-  const [isProfileEditOpen, setProfileEditOpen] = React.useState(false);
-  const [isAddCardFormOpen, setAddCardFormOpen] = React.useState(false);
-  const [isUserAvatarFormOpen, setUserAvatarFormOpen] = React.useState(false);
-  const [isConfirmationOpen, setConfirmationOpen] = React.useState(false);
+  const [isProfileEditOpen, setProfileEditOpen] = useState(false);
+  const [isAddCardFormOpen, setAddCardFormOpen] = useState(false);
+  const [isUserAvatarFormOpen, setUserAvatarFormOpen] = useState(false);
+  const [isConfirmationOpen, setConfirmationOpen] = useState(false);
 
-  const [selectedCard, setSelectedCard] = React.useState({});
-  const [isCardOpen, setCardOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = useState('');
+  const [isCardOpen, setCardOpen] = useState(false);
 
-  const [currentUser, setCurrentUser] = React.useState({});
-  const [cards, setCard] = React.useState([]);
-  const [currentCard, setCurrentCard] = React.useState({});
+  const [currentUser, setCurrentUser] = useState('');
+  const [cards, setCard] = useState([]);
+  const [currentCard, setCurrentCard] = useState('');
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then((data) => {
         const [userData, cardsData] = data;
@@ -76,7 +76,10 @@ function App() {
     
     api.createLike(card._id, !isLiked).then((newCard) => {
       setCard((state) => state.map((c) => c._id === card._id ? newCard : c));
-    });
+    })
+    .catch((error) => {
+      console.log(`Ошибка: ${error}`);
+    })
   }
 
   function handleUpdateUser({ name, about }) {

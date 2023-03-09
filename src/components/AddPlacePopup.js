@@ -1,16 +1,21 @@
-import React from "react";
+import { useEffect, useState } from 'react';
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
 
-  const [nameInput, setNameInput] = React.useState({});
-  const [linkInput, setLinkInput] = React.useState({});
+  const [nameInput, setNameInput] = useState('');
+  const [linkInput, setLinkInput] = useState('');
 
   function handleSubmit(evt) {
     evt.preventDefault();
 
     props.onAddCard({ name: nameInput, link: linkInput });
   }
+
+  useEffect(() => {
+    setNameInput('');
+    setLinkInput('');
+  }, [props.isOpen])
 
   function handleChangeName(evt) {
     setNameInput(evt.target.value);
@@ -38,6 +43,7 @@ function AddPlacePopup(props) {
           minLength="2" 
           maxLength="40" 
           onChange={handleChangeName} 
+          value={nameInput || ''}
           required 
         />
         <p className="user-name-error popup__input-error"></p>
@@ -50,6 +56,7 @@ function AddPlacePopup(props) {
           minLength="2" 
           maxLength="200" 
           onChange={handleChangeLink} 
+          value={linkInput || ''}
           required 
         />
         <p className="user-job-error popup__input-error"></p>
