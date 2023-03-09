@@ -46,7 +46,7 @@ function EditProfilePopup(props) {
           minLength="2" 
           maxLength="40" 
           onChange={handleChangeName} 
-          //value={name}
+          value={name || ''}
           required />
         <p className="user-name-error popup__input-error"></p>
       <label htmlFor="user-job" className="popup__label">
@@ -58,7 +58,7 @@ function EditProfilePopup(props) {
           minLength="2"
           maxLength="200"
           onChange={handleChangeDescription}
-          //value={description}
+          value={description || ''}
           required />
         <p className="user-job-error popup__input-error"></p>
       </label>
