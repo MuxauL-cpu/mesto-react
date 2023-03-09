@@ -17,9 +17,10 @@
 5) Удалять карточки;
 
 **Технологии используемые в проекте:**
-1) Context;  
-2) API;  
-3) JavaScript;  
-4) React;
-5) React hooks;
-5) Оформление файловой системы по методологии БЭМ;
+1) API;  
+2) JavaScript;  
+3) React;
+4) React hooks;
+5) React useState;
+6) React useEffect;
+7) Оформление файловой системы по методологии БЭМ;
